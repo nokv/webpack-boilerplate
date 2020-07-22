@@ -1,4 +1,5 @@
 const isProd = process.env.NODE_ENV === 'production';
+const pages = require('./conf/pages');
 
 const path = require('path');
 
@@ -6,7 +7,11 @@ const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
 const WebpackBar = require('webpackbar');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
+const entries = {};
+pages.forEach((page) => (entries[page.key] = page.filePath));
 
 /**
  * @type import('webpack').Configuration
@@ -14,12 +19,10 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpackConfig = {
     mode: process.env.NODE_ENV || 'development',
     devtool: !isProd ? 'source-map' : false,
-    entry: {
-        index: './src/assets/scripts/index.ts',
-    },
+    entry: entries,
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].js',
+        filename: 'assets/js/[name].js',
     },
     module: {
         rules: [
@@ -103,5 +106,16 @@ const webpackConfig = {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
     },
 };
+
+pages.forEach((page) => {
+    webpackConfig.plugins.push(
+        new HtmlWebpackPlugin({
+            inject: false,
+            chunks: page.key,
+            filename: page.htmlPath,
+            template: path.resolve(__dirname, `src/pages/${page.htmlPath}`),
+        })
+    );
+});
 
 module.exports = webpackConfig;
