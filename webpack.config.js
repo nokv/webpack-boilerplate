@@ -9,6 +9,7 @@ const WebpackBar = require('webpackbar');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const entries = {};
 pages.forEach((page) => (entries[page.key] = page.filePath));
@@ -77,6 +78,20 @@ const webpackConfig = {
         new CleanWebpackPlugin({
             cleanStaleWebpackAssets: false,
             verbose: true,
+        }),
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: path.resolve(__dirname, 'src', 'static'),
+                    to: path.resolve(__dirname, 'dist'),
+                    toType: 'dir',
+                },
+                {
+                    from: path.resolve(__dirname, 'src', 'assets', 'img'),
+                    to: path.resolve(__dirname, 'dist', 'assets', 'img'),
+                    toType: 'dir',
+                },
+            ],
         }),
     ],
     optimization: {

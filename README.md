@@ -7,7 +7,7 @@
 -   [x] Babel
 -   [x] Javascript,HTML,CSS の minify
 -   [x] SASS/CSS compile
--   [ ] static ディレクトリ
+-   [x] static ディレクトリ
 -   [ ] 開発用ローカルサーバー
 -   [ ] ESLint
 
