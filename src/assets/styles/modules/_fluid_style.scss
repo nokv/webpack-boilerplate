@@ -1,0 +1,10 @@
+// vwの取得
+@function get_vw($size, $viewport: var(--base-size)) {
+    $rate: 100 / $viewport;
+    @return calc(#{$rate} * #{$size} * 1vw);
+}
+
+// %の取得
+@function get_per($size, $parent: var(--base-size)) {
+    @return calc(#{$size} / #{$parent} * 100%);
+}

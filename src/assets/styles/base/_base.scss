@@ -1,0 +1,70 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: $font-family-default;
+    color: $color-black;
+    font-size: 1.6em;
+    font-weight: 400;
+    letter-spacing: normal;
+    background-repeat: no-repeat;
+    background-color: $color-white;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    word-break: break-all;
+    word-spacing: 1px;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-print-color-adjust: exact;
+    overscroll-behavior: none;
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+    object-fit: cover;
+}
+
+ul[class],
+ol[class] {
+    list-style: none;
+}
+
+a,
+a:hover,
+a:visited {
+    outline: none;
+    border: none;
+    text-decoration: none;
+    color: inherit;
+}
+
+::selection {
+    background-color: $color-black;
+    color: $color-white;
+}
+
+.disnone {
+    display: none;
+}
+
+.sp {
+    display: none;
+}
+
+@include mq-mobile {
+    .sp {
+        display: block;
+    }
+
+    .pc {
+        display: none;
+    }
+}
