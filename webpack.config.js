@@ -13,7 +13,7 @@ module.exports = {
     mode: process.env.NODE_ENV || 'development',
     devtool: !isProd ? 'source-map' : false,
     entry: {
-        index: './src/assets/scripts/index.js',
+        index: './src/assets/scripts/index.ts',
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -22,7 +22,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: [/\.ts$/, /\.tsx$/, /\.js$/, /\.jsx$/],
                 exclude: /node_modules/,
                 use: [
                     {
@@ -37,6 +37,18 @@ module.exports = {
                                     },
                                 ],
                             ],
+                        },
+                    },
+                ],
+            },
+            {
+                test: [/\.ts$/, /\.tsx$/],
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: 'ts-loader',
+                        options: {
+                            transpileOnly: true,
                         },
                     },
                 ],
@@ -68,6 +80,6 @@ module.exports = {
         // runtimeChunk: 'single',
     },
     resolve: {
-        extensions: ['.js', '.ts', '.tsx'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
     },
 };
