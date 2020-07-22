@@ -5,11 +5,13 @@ const path = require('path');
 // plugins
 const TerserPlugin = require('terser-webpack-plugin');
 const WebpackBar = require('webpackbar');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 /**
  * @type import('webpack').Configuration
  */
-module.exports = {
+const webpackConfig = {
     mode: process.env.NODE_ENV || 'development',
     devtool: !isProd ? 'source-map' : false,
     entry: {
@@ -53,9 +55,27 @@ module.exports = {
                     },
                 ],
             },
+            {
+                test: /(\.s[ac]ss)$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'postcss-loader',
+                    'sass-loader',
+                ],
+            },
         ],
     },
-    plugins: [new WebpackBar()],
+    plugins: [
+        new WebpackBar(),
+        new MiniCssExtractPlugin({
+            filename: 'assets/css/[name].css',
+        }),
+        new CleanWebpackPlugin({
+            cleanStaleWebpackAssets: false,
+            verbose: true,
+        }),
+    ],
     optimization: {
         minimize: isProd,
         minimizer: [
@@ -83,3 +103,5 @@ module.exports = {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
     },
 };
+
+module.exports = webpackConfig;

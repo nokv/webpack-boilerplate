@@ -1,3 +1,4 @@
+import '../styles/pages/index.scss';
 import add from './module/add';
 
 class App {
