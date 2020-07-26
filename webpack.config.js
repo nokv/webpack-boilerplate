@@ -23,7 +23,14 @@ const webpackConfig = {
     entry: entries,
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'assets/js/[name].js',
+        filename: 'assets/js/[name].js?[hash:7]',
+    },
+    devServer: {
+        hot: true,
+        contentBase: path.resolve(__dirname, 'dist'),
+        watchContentBase: true,
+        port: 3000,
+        historyApiFallback: true,
     },
     module: {
         rules: [
@@ -70,10 +77,14 @@ const webpackConfig = {
             },
         ],
     },
+    watchOptions: {
+        poll: 1000,
+        ignored: /node_modules/,
+    },
     plugins: [
         new WebpackBar(),
         new MiniCssExtractPlugin({
-            filename: 'assets/css/[name].css',
+            filename: 'assets/css/[name].css?[hash:7]',
         }),
         new CleanWebpackPlugin({
             cleanStaleWebpackAssets: false,
@@ -125,9 +136,11 @@ const webpackConfig = {
 pages.forEach((page) => {
     webpackConfig.plugins.push(
         new HtmlWebpackPlugin({
-            inject: false,
-            chunks: page.key,
+            inject: 'head',
+            scriptLoading: 'defer',
+            chunks: [page.key],
             filename: page.htmlPath,
+            hash: false,
             template: path.resolve(__dirname, `src/pages/${page.htmlPath}`),
         })
     );

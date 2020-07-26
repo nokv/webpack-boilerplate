@@ -1,10 +1,10 @@
 import '../styles/pages/index.scss';
 import add from './module/add';
 
-class App {
+class Index {
     constructor() {
         console.log(add(1, 2));
     }
 }
 
-new App();
+new Index();

@@ -8,7 +8,7 @@
 -   [x] Javascript,HTML,CSS の minify
 -   [x] SASS/CSS compile
 -   [x] static ディレクトリ
--   [ ] 開発用ローカルサーバー
+-   [x] 開発用ローカルサーバー
 -   [ ] ESLint
 
 ## License
