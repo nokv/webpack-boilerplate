@@ -96,11 +96,17 @@ const webpackConfig = {
                     from: path.resolve(__dirname, 'src', 'static'),
                     to: path.resolve(__dirname, 'dist'),
                     toType: 'dir',
+                    globOptions: {
+                        ignore: ['*.DS_Store', '**/.keep'],
+                    },
                 },
                 {
                     from: path.resolve(__dirname, 'src', 'assets', 'img'),
                     to: path.resolve(__dirname, 'dist', 'assets', 'img'),
                     toType: 'dir',
+                    globOptions: {
+                        ignore: ['*.DS_Store', '**/.keep'],
+                    },
                 },
             ],
         }),
