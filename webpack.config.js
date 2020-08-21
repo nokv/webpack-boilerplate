@@ -11,6 +11,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
+const { src, build, static } = require('./conf/paths');
+
 const entries = {};
 pages.forEach((page) => (entries[page.key] = page.filePath));
 
@@ -22,12 +24,12 @@ const webpackConfig = {
     devtool: !isProd ? 'source-map' : false,
     entry: entries,
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: build,
         filename: 'assets/js/[name].js?[hash:7]',
     },
     devServer: {
         hot: true,
-        contentBase: path.resolve(__dirname, 'dist'),
+        contentBase: build,
         watchContentBase: true,
         port: 3000,
         historyApiFallback: true,
@@ -93,16 +95,16 @@ const webpackConfig = {
         new CopyWebpackPlugin({
             patterns: [
                 {
-                    from: path.resolve(__dirname, 'src', 'static'),
-                    to: path.resolve(__dirname, 'dist'),
+                    from: static,
+                    to: build,
                     toType: 'dir',
                     globOptions: {
                         ignore: ['*.DS_Store', '**/.keep'],
                     },
                 },
                 {
-                    from: path.resolve(__dirname, 'src', 'assets', 'img'),
-                    to: path.resolve(__dirname, 'dist', 'assets', 'img'),
+                    from: path.resolve(src, 'assets', 'img'),
+                    to: path.resolve(build, 'assets', 'img'),
                     toType: 'dir',
                     globOptions: {
                         ignore: ['*.DS_Store', '**/.keep'],
@@ -147,7 +149,7 @@ pages.forEach((page) => {
             chunks: [page.key],
             filename: page.htmlPath,
             hash: false,
-            template: path.resolve(__dirname, `src/pages/${page.htmlPath}`),
+            template: path.resolve(src, `pages/${page.htmlPath}`),
         })
     );
 });
