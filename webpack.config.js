@@ -37,6 +37,12 @@ const webpackConfig = {
     module: {
         rules: [
             {
+                enforce: 'pre',
+                test: [/\.ts$/, /\.tsx$/, /\.js$/, /\.jsx$/],
+                exclude: /(node_modules|dist)/,
+                loader: 'eslint-loader',
+            },
+            {
                 test: [/\.ts$/, /\.tsx$/, /\.js$/, /\.jsx$/],
                 exclude: /node_modules/,
                 use: [

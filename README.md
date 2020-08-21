@@ -1,15 +1,15 @@
-# Webpack 4 Boilerplate
+# Webpack Boilerplate
 
 ## Features
 
--   [x] JS の Bundle
--   [x] TS の Bundle
+-   [x] JS Bundle
+-   [x] Typescript Support
 -   [x] Babel
--   [x] Javascript,HTML,CSS の minify
+-   [x] minify Javascript,HTML,CSS
 -   [x] SASS/CSS compile
--   [x] static ディレクトリ
--   [x] 開発用ローカルサーバー
--   [ ] ESLint
+-   [x] static directory
+-   [x] dev server
+-   [x] ESLint
 
 ## License
 
