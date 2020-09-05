@@ -155,7 +155,7 @@ pages.forEach((page) => {
             chunks: [page.key],
             filename: page.htmlPath,
             hash: false,
-            template: page.htmlPath,
+            template: path.resolve(src, `pages/${page.htmlPath}`),
         })
     );
 });

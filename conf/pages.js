@@ -5,12 +5,12 @@ const pages = [
     {
         key: 'index',
         filePath: path.resolve(src, 'assets/scripts/index.ts'),
-        htmlPath: path.resolve(src, 'pages/index.html'),
+        htmlPath: 'index.html',
     },
     {
         key: 'about',
         filePath: path.resolve(src, 'assets/scripts/about.ts'),
-        htmlPath: path.resolve(src, 'pages/about/index.html'),
+        htmlPath: 'about/index.html',
     },
 ];
 
