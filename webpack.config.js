@@ -10,6 +10,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const Sass = require('sass');
+const Fiber = require('fibers');
 
 const { src, build, static } = require('./conf/paths');
 
@@ -79,8 +81,16 @@ const webpackConfig = {
                 use: [
                     MiniCssExtractPlugin.loader,
                     { loader: 'css-loader', options: { url: false } },
-                    'postcss-loader',
-                    'sass-loader',
+                    { loader: 'postcss-loader' },
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            implementation: Sass,
+                            sassOptions: {
+                                fiber: Fiber,
+                            },
+                        },
+                    },
                 ],
             },
         ],

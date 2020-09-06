@@ -1,5 +1,8 @@
 @charset 'UTF-8';
 
+// Reset
+@use 'ress';
+
 // Variables
 @import 'base/variables';
 @import 'base/variables-easing';
@@ -9,5 +12,4 @@
 @import 'modules/mixin_mq';
 
 // Base
-@import '~ress';
 @import 'base/base';
