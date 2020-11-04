@@ -46,7 +46,7 @@
     "sass": "1.27.0",
     "sass-loader": "10.0.3",
     "terser-webpack-plugin": "4.2.3",
-    "ts-loader": "8.0.4",
+    "ts-loader": "8.0.9",
     "typescript": "3.9.7",
     "webpack": "4.44.2",
     "webpack-cli": "3.3.12",
