@@ -7,7 +7,7 @@
   "keywords": [],
   "license": "MIT",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server",
+    "dev": "cross-env NODE_ENV=development webpack serve",
     "build": "cross-env NODE_ENV=production webpack",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint:js": "eslint --ext .js,.ts --ignore-path .gitignore .",
