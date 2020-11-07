@@ -1,5 +1,5 @@
 {
-  "name": "learn-webpack",
+  "name": "webpack-boilerplate",
   "version": "0.1.0",
   "description": "",
   "author": "nokl",
@@ -16,7 +16,7 @@
   },
   "browserslist": [
     "last 2 version",
-    "IE 11"
+    "ie >= 11"
   ],
   "devDependencies": {
     "@babel/core": "7.12.3",

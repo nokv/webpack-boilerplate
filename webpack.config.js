@@ -19,7 +19,7 @@ const entries = {};
 pages.forEach((page) => (entries[page.key] = page.filePath));
 
 /**
- * @type import('webpack').Configuration
+ * @type import('webpack').WebpackOptionsNormalized
  */
 const webpackConfig = {
     mode: process.env.NODE_ENV || 'development',
