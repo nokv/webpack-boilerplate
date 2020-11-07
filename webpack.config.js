@@ -134,7 +134,6 @@ const webpackConfig = {
         minimizer: [
             new TerserPlugin({
                 parallel: true,
-                cache: false,
                 extractComments: {
                     filename: 'LICENSES',
                 },
