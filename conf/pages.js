@@ -1,15 +1,15 @@
 const path = require('path');
-const { src } = require('./paths');
+const { srcPath } = require('./paths');
 
 const pages = [
     {
         key: 'index',
-        filePath: path.resolve(src, 'assets/scripts/index.ts'),
+        filePath: path.resolve(srcPath, 'assets/scripts/index.ts'),
         htmlPath: 'index.html',
     },
     {
         key: 'about',
-        filePath: path.resolve(src, 'assets/scripts/about.ts'),
+        filePath: path.resolve(srcPath, 'assets/scripts/about.ts'),
         htmlPath: 'about/index.html',
     },
 ];

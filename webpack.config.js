@@ -13,7 +13,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const Sass = require('sass');
 const Fiber = require('fibers');
 
-const { src, build, static } = require('./conf/paths');
+const { srcPath, buildPath, staticPath } = require('./conf/paths');
 
 const entries = {};
 pages.forEach((page) => (entries[page.key] = page.filePath));
@@ -26,12 +26,12 @@ const webpackConfig = {
     devtool: !isProd ? 'source-map' : false,
     entry: entries,
     output: {
-        path: build,
-        filename: 'assets/js/[name].js?[hash:7]',
+        path: buildPath,
+        filename: 'assets/js/[name].js?[chunkhash:7]',
     },
     devServer: {
         hot: true,
-        contentBase: build,
+        contentBase: buildPath,
         watchContentBase: true,
         port: 3000,
         historyApiFallback: true,
@@ -56,7 +56,7 @@ const webpackConfig = {
                                     '@babel/preset-env',
                                     {
                                         useBuiltIns: 'usage',
-                                        corejs: '3.7',
+                                        corejs: '3.8',
                                     },
                                 ],
                             ],
@@ -102,7 +102,7 @@ const webpackConfig = {
     plugins: [
         new WebpackBar(),
         new MiniCssExtractPlugin({
-            filename: 'assets/css/[name].css?[hash:7]',
+            filename: 'assets/css/[name].css?[chunkhash:7]',
         }),
         new CleanWebpackPlugin({
             cleanStaleWebpackAssets: false,
@@ -111,16 +111,16 @@ const webpackConfig = {
         new CopyWebpackPlugin({
             patterns: [
                 {
-                    from: static,
-                    to: build,
+                    from: staticPath,
+                    to: buildPath,
                     toType: 'dir',
                     globOptions: {
                         ignore: ['*.DS_Store', '**/.keep'],
                     },
                 },
                 {
-                    from: path.resolve(src, 'assets', 'img'),
-                    to: path.resolve(build, 'assets', 'img'),
+                    from: path.resolve(srcPath, 'assets', 'img'),
+                    to: path.resolve(buildPath, 'assets', 'img'),
                     toType: 'dir',
                     globOptions: {
                         ignore: ['*.DS_Store', '**/.keep'],
@@ -164,7 +164,7 @@ pages.forEach((page) => {
             chunks: [page.key],
             filename: page.htmlPath,
             hash: false,
-            template: path.resolve(src, `pages/${page.htmlPath}`),
+            template: path.resolve(srcPath, `pages/${page.htmlPath}`),
         })
     );
 });
