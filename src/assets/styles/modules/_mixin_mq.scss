@@ -56,3 +56,33 @@
         @content;
     }
 }
+
+@mixin mq-less-than-base-pc {
+    @media all and (max-width: $base-size-pc * 1px) {
+        @content;
+    }
+}
+
+@mixin mq-less-than-base-mobile {
+    @media all and (max-width: $base-size-sp * 1px) {
+        @content;
+    }
+}
+
+@mixin ie-only {
+    @media all and (-ms-high-contrast: none) {
+        @content;
+    }
+}
+
+@mixin legacy-edge-only {
+    @supports (-ms-ime-align: auto) {
+        @content;
+    }
+}
+
+@mixin retina-only {
+    @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+        @content;
+    }
+}

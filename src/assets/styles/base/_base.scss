@@ -26,7 +26,7 @@ body {
 }
 
 img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     vertical-align: middle;
     object-fit: cover;
@@ -62,16 +62,15 @@ button {
     display: none;
 }
 
-.sp {
+.sp-only {
     display: none;
+    @include mq-mobile {
+        display: block;
+    }
 }
 
 @include mq-mobile {
-    .sp {
-        display: block;
-    }
-
-    .pc {
+    .pc-only {
         display: none;
     }
 }
