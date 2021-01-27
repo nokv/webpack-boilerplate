@@ -40,12 +40,12 @@ const webpackConfig = {
         rules: [
             {
                 enforce: 'pre',
-                test: [/\.ts$/, /\.tsx$/, /\.js$/, /\.jsx$/],
+                test: /\.(js|ts|tsx)$/,
                 exclude: /(node_modules|dist)/,
                 loader: 'eslint-loader',
             },
             {
-                test: [/\.ts$/, /\.tsx$/, /\.js$/, /\.jsx$/],
+                test: /\.(js|ts|tsx)$/,
                 exclude: /node_modules/,
                 use: [
                     {
@@ -65,7 +65,7 @@ const webpackConfig = {
                 ],
             },
             {
-                test: [/\.ts$/, /\.tsx$/],
+                test: /\.(js|ts|tsx)$/,
                 exclude: /node_modules/,
                 use: [
                     {
