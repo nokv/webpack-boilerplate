@@ -1,4 +1,4 @@
-import '../../styles/pages/index.scss';
+import '../styles/pages/index.scss';
 import add from '../modules/add';
 
 class Index {

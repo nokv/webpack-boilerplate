@@ -4,12 +4,12 @@ const { srcPath } = require('./paths');
 const pages = [
     {
         key: 'index',
-        filePath: path.resolve(srcPath, 'assets/scripts/index.ts'),
+        filePath: path.resolve(srcPath, 'assets/scripts/pages/index.ts'),
         htmlPath: 'index.html',
     },
     {
         key: 'about',
-        filePath: path.resolve(srcPath, 'assets/scripts/about.ts'),
+        filePath: path.resolve(srcPath, 'assets/scripts/pages/about.ts'),
         htmlPath: 'about/index.html',
     },
 ];

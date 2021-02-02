@@ -1,4 +1,4 @@
-import '../styles/pages/about.scss';
+import '../../styles/pages/about.scss';
 
 class About {
     constructor() {

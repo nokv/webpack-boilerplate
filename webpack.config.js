@@ -157,16 +157,18 @@ const webpackConfig = {
 };
 
 pages.forEach((page) => {
-    webpackConfig.plugins.push(
-        new HtmlWebpackPlugin({
-            inject: 'head',
-            scriptLoading: 'defer',
-            chunks: [page.key],
-            filename: page.htmlPath,
-            hash: false,
-            template: path.resolve(srcPath, `pages/${page.htmlPath}`),
-        })
-    );
+    if (page.htmlPath) {
+        webpackConfig.plugins.push(
+            new HtmlWebpackPlugin({
+                inject: 'head',
+                scriptLoading: 'defer',
+                chunks: [page.key],
+                filename: page.htmlPath,
+                hash: false,
+                template: path.resolve(srcPath, `pages/${page.htmlPath}`),
+            })
+        );
+    }
 });
 
 module.exports = webpackConfig;
