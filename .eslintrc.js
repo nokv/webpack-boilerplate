@@ -4,21 +4,16 @@ module.exports = {
         browser: true,
         node: true,
     },
-    extends: [
-        'eslint:recommended',
-        'plugin:@typescript-eslint/recommended',
-        'prettier',
-        'plugin:prettier/recommended',
-        'prettier/@typescript-eslint',
-    ],
-    plugins: ['@typescript-eslint', 'prettier'],
+    extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
+    plugins: ['@typescript-eslint'],
+    parser: '@typescript-eslint/parser',
     parserOptions: {
-        parser: '@typescript-eslint/parser',
-        ecmaVersion: 2018,
+        ecmaVersion: 12,
         sourceType: 'module',
     },
     // add your custom rules here
     rules: {
+        quotes: ['error', 'single'],
         'no-unused-vars': 'warn',
     },
     overrides: [
