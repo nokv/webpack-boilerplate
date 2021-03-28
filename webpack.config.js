@@ -18,6 +18,19 @@ const { srcPath, buildPath, staticPath } = require('./conf/paths');
 const entries = {};
 pages.forEach((page) => (entries[page.key] = page.filePath));
 
+const generateHTMLPlugins = () =>
+    pages.map(
+        (page) =>
+            new HtmlWebpackPlugin({
+                inject: 'head',
+                scriptLoading: 'defer',
+                chunks: [page.key],
+                filename: page.htmlPath,
+                hash: false,
+                template: path.resolve(srcPath, `pages/${page.htmlPath}`),
+            })
+    );
+
 /**
  * @type import('webpack').WebpackOptionsNormalized
  */
@@ -128,6 +141,7 @@ const webpackConfig = {
                 },
             ],
         }),
+        ...generateHTMLPlugins(),
     ],
     optimization: {
         minimize: isProd,
@@ -155,20 +169,5 @@ const webpackConfig = {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
     },
 };
-
-pages.forEach((page) => {
-    if (page.htmlPath) {
-        webpackConfig.plugins.push(
-            new HtmlWebpackPlugin({
-                inject: 'head',
-                scriptLoading: 'defer',
-                chunks: [page.key],
-                filename: page.htmlPath,
-                hash: false,
-                template: path.resolve(srcPath, `pages/${page.htmlPath}`),
-            })
-        );
-    }
-});
 
 module.exports = webpackConfig;
