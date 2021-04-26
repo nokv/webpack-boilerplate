@@ -1,4 +1,5 @@
-module.exports = {
+/** @type {import('@typescript-eslint/experimental-utils').TSESLint.Linter.Config} */
+const config = {
     root: true,
     env: {
         browser: true,
@@ -12,7 +13,7 @@ module.exports = {
     plugins: ['@typescript-eslint'],
     parser: '@typescript-eslint/parser',
     parserOptions: {
-        ecmaVersion: 12,
+        ecmaVersion: 2020,
         sourceType: 'module',
     },
     // add your custom rules here
@@ -29,3 +30,4 @@ module.exports = {
         },
     ],
 };
+module.exports = config;

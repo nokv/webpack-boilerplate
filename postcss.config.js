@@ -1,4 +1,5 @@
-module.exports = {
+/** @type {import('postcss').Postcss} */
+const config = {
     plugins: [
         require('autoprefixer')({
             grid: 'autoplace',
@@ -7,3 +8,4 @@ module.exports = {
         require('postcss-custom-properties')({}),
     ],
 };
+module.exports = config;
