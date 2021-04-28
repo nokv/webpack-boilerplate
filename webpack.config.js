@@ -167,7 +167,7 @@ const webpackConfig = {
                 },
             },
         },
-        // runtimeChunk: 'single',
+        runtimeChunk: { name: 'vendor' },
     },
     resolve: {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
