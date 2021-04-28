@@ -1,3 +1,4 @@
+const isDev = process.env.NODE_ENV === 'development';
 const isProd = process.env.NODE_ENV === 'production';
 const pages = require('./conf/pages');
 
@@ -39,6 +40,7 @@ const generateHTMLPlugins = () =>
 const webpackConfig = {
     mode: process.env.NODE_ENV || 'development',
     devtool: !isProd ? 'source-map' : false,
+    target: isDev ? 'web' : 'browserslist',
     entry: entries,
     output: {
         path: buildPath,
