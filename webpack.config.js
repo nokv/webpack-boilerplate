@@ -1,6 +1,6 @@
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = process.env.NODE_ENV === 'production';
-const pages = require('./conf/pages');
+const pages = require('./config/pages');
 
 const path = require('path');
 
@@ -14,7 +14,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const Sass = require('sass');
 const Fiber = require('fibers');
 
-const { srcPath, buildPath, staticPath } = require('./conf/paths');
+const { srcPath, buildPath, staticPath } = require('./config/paths');
 
 const entries = {};
 pages.forEach((page) => (entries[page.key] = page.filePath));
