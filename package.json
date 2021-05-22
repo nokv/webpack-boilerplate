@@ -17,6 +17,9 @@
     "fix:eslint": "yarn lint:eslint -- --fix",
     "fix:prettier": "yarn lint:prettier -- --write"
   },
+  "engines": {
+    "node": "14"
+  },
   "browserslist": [
     "last 2 version",
     "ie >= 11"
