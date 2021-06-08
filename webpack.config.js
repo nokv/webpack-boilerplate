@@ -13,6 +13,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const Sass = require('sass');
 const Fiber = require('fibers');
+const StylelintPlugin = require('stylelint-webpack-plugin');
 
 const { srcPath, buildPath, staticPath } = require('./config/paths');
 
@@ -146,6 +147,7 @@ const webpackConfig = {
             ],
         }),
         ...generateHTMLPlugins(),
+        new StylelintPlugin(),
     ],
     optimization: {
         minimize: isProd,
