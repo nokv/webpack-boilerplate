@@ -15,7 +15,7 @@
     "lint:eslint": "eslint .",
     "lint:prettier": "prettier --check .",
     "lint:style": "stylelint \"**/*.{vue,css,scss}\" --ignore-path .gitignore",
-    "fix": "run-s fix:prettier fix:eslint fix:style",
+    "fix": "run-s fix:*",
     "fix:eslint": "yarn lint:eslint --fix",
     "fix:prettier": "prettier -w .",
     "fix:style": "yarn lint:style --fix"
