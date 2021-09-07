@@ -36,6 +36,18 @@ const generateHTMLPlugins = () =>
         );
 
 /**
+ * @type import('webpack-dev-server').Configuration
+ */
+const devServerConfig = {
+    hot: 'only',
+    port: 3000,
+    historyApiFallback: true,
+    static: {
+        directory: buildPath,
+        watch: true,
+    },
+};
+/**
  * @type import('webpack').WebpackOptionsNormalized
  */
 const webpackConfig = {
@@ -47,13 +59,7 @@ const webpackConfig = {
         path: buildPath,
         filename: 'assets/js/[name].js?[chunkhash:7]',
     },
-    devServer: {
-        hot: true,
-        contentBase: buildPath,
-        watchContentBase: true,
-        port: 3000,
-        historyApiFallback: true,
-    },
+    devServer: { ...devServerConfig },
     module: {
         rules: [
             {
