@@ -1,0 +1,16 @@
+// Design sizes
+$base-size-desktop: 1440;
+$base-size-mobile: 750;
+
+// Breakpoints
+$break-point-pc: 1440px;
+$break-point-tablet: 1024px;
+$break-point-mobile: 768px;
+
+:root {
+    --base-size: #{$base-size-desktop};
+
+    @media all and (max-width: $break-point-mobile) {
+        --base-size: #{$base-size-mobile};
+    }
+}

@@ -1,88 +1,96 @@
+@use '../setting/size' as var;
+
 //
-// rwd break points
 // pc-l | pc-s | tablet | mobile
 //
 // ○ | - | - | -
 @mixin mq-pc-l {
-    @media all and (min-width: $break-point-pc + 1px) {
+    @media all and (min-width: var.$break-point-pc + 1px) {
         @content;
     }
 }
 // - | ○ | - | -
 @mixin mq-pc-s {
-    @media all and (min-width: $break-point-tablet + 1px) and (max-width: $break-point-pc) {
+    @media all and (min-width: var.$break-point-tablet + 1px) and (max-width: var.$break-point-pc) {
         @content;
     }
 }
 // - | - | ○ | -
 @mixin mq-tablet {
-    @media all and (min-width: $break-point-mobile + 1px) and (max-width: $break-point-tablet) {
+    @media all and (min-width: var.$break-point-mobile + 1px) and (max-width: var.$break-point-tablet) {
         @content;
     }
 }
 // - | - | - | ○
 @mixin mq-mobile {
-    @media all and (max-width: $break-point-mobile) {
+    @media all and (max-width: var.$break-point-mobile) {
         @content;
     }
 }
 // ○ | ○ | - | -
 @mixin mq-pc-all {
-    @media all and (min-width: $break-point-tablet + 1px) {
+    @media all and (min-width: var.$break-point-tablet + 1px) {
         @content;
     }
 }
 // - | ○ | ○ | -
 @mixin mq-pc-and-tablet {
-    @media all and (min-width: $break-point-mobile + 1px) and (max-width: $break-point-pc) {
+    @media all and (min-width: var.$break-point-mobile + 1px) and (max-width: var.$break-point-pc) {
         @content;
     }
 }
 @mixin mq-tablet-and-mobile {
     // - | - | ○ | ○
-    @media all and (max-width: $break-point-tablet) {
+    @media all and (max-width: var.$break-point-tablet) {
         @content;
     }
 }
 // ○ | ○ | ○ | -
 @mixin mq-more-than-mobile {
-    @media all and (min-width: $break-point-mobile + 1px) {
+    @media all and (min-width: var.$break-point-mobile + 1px) {
         @content;
     }
 }
 // - | ○ | ○ | ○
 @mixin mq-less-than-pc {
-    @media all and (max-width: $break-point-pc) {
+    @media all and (max-width: var.$break-point-pc) {
         @content;
     }
 }
 
 @mixin mq-less-than-base-pc {
-    @media all and (max-width: $base-size-pc * 1px) {
+    @media all and (max-width: var.$base-size-pc * 1px) {
         @content;
     }
 }
 
 @mixin mq-less-than-base-mobile {
-    @media all and (max-width: $base-size-sp * 1px) {
+    @media all and (max-width: var.$base-size-sp * 1px) {
         @content;
     }
 }
 
-@mixin ie-only {
+@mixin mq-ie-only {
     @media all and (-ms-high-contrast: none) {
         @content;
     }
 }
 
-@mixin legacy-edge-only {
+@mixin mq-legacy-edge-only {
     @supports (-ms-ime-align: auto) {
         @content;
     }
 }
 
-@mixin retina-only {
+@mixin mq-retina-only {
     @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+        @content;
+    }
+}
+
+// https://css-irl.info/detecting-hover-capable-devices/
+@mixin mq-hoverable {
+    @media (hover: hover) and (pointer: fine) {
         @content;
     }
 }

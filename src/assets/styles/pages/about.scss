@@ -1,4 +1,5 @@
-@use '../main';
+@use '../base';
+@use '../global' as global;
 
 .p-about {
     position: relative;
