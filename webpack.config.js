@@ -6,6 +6,7 @@ const path = require('path');
 
 // plugins
 const TerserPlugin = require('terser-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 const WebpackBar = require('webpackbar');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -62,12 +63,6 @@ const webpackConfig = {
     devServer: { ...devServerConfig },
     module: {
         rules: [
-            {
-                enforce: 'pre',
-                test: /\.(js|ts|tsx)$/,
-                exclude: /(node_modules|dist)/,
-                loader: 'eslint-loader',
-            },
             {
                 test: /\.(js|ts|tsx)$/,
                 exclude: /node_modules/,
@@ -127,6 +122,10 @@ const webpackConfig = {
         new WebpackBar(),
         new MiniCssExtractPlugin({
             filename: 'assets/css/[name].css?[chunkhash:7]',
+            ignoreOrder: false,
+        }),
+        new ESLintPlugin({
+            extensions: ['js', 'ts'],
         }),
         new CleanWebpackPlugin({
             cleanStaleWebpackAssets: false,
