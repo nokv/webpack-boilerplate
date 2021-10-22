@@ -12,15 +12,13 @@ body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
     -webkit-print-color-adjust: exact;
     -webkit-tap-highlight-color: transparent;
     background-repeat: no-repeat;
     -webkit-overflow-scrolling: touch;
     overflow-x: hidden;
     overscroll-behavior-y: none;
-    scroll-behavior: smooth;
 }
 
 a,

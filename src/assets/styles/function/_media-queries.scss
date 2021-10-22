@@ -1,38 +1,41 @@
 @use '../setting/size' as var;
 
-//
 // pc-l | pc-s | tablet | mobile
-//
 // ○ | - | - | -
 @mixin mq-pc-l {
     @media all and (min-width: var.$break-point-pc + 1px) {
         @content;
     }
 }
+
 // - | ○ | - | -
 @mixin mq-pc-s {
     @media all and (min-width: var.$break-point-tablet + 1px) and (max-width: var.$break-point-pc) {
         @content;
     }
 }
+
 // - | - | ○ | -
 @mixin mq-tablet {
     @media all and (min-width: var.$break-point-mobile + 1px) and (max-width: var.$break-point-tablet) {
         @content;
     }
 }
+
 // - | - | - | ○
 @mixin mq-mobile {
     @media all and (max-width: var.$break-point-mobile) {
         @content;
     }
 }
+
 // ○ | ○ | - | -
 @mixin mq-pc-all {
     @media all and (min-width: var.$break-point-tablet + 1px) {
         @content;
     }
 }
+
 // - | ○ | ○ | -
 @mixin mq-pc-and-tablet {
     @media all and (min-width: var.$break-point-mobile + 1px) and (max-width: var.$break-point-pc) {
@@ -45,12 +48,14 @@
         @content;
     }
 }
+
 // ○ | ○ | ○ | -
 @mixin mq-more-than-mobile {
     @media all and (min-width: var.$break-point-mobile + 1px) {
         @content;
     }
 }
+
 // - | ○ | ○ | ○
 @mixin mq-less-than-pc {
     @media all and (max-width: var.$break-point-pc) {
