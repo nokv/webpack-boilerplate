@@ -1,5 +1,7 @@
+@use 'sass:math';
+
 @function get-vw($size, $viewport: var(--base-size)) {
-    $rate: 100 / $viewport;
+    $rate: math.div(100, $viewport);
     @return calc(#{$rate} * #{$size} * 1vw);
 }
 
