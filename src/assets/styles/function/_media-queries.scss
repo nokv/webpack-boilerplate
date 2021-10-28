@@ -64,13 +64,13 @@
 }
 
 @mixin mq-less-than-base-pc {
-    @media all and (max-width: var.$base-size-pc * 1px) {
+    @media all and (max-width: var.$base-size-desktop * 1px) {
         @content;
     }
 }
 
 @mixin mq-less-than-base-mobile {
-    @media all and (max-width: var.$base-size-sp * 1px) {
+    @media all and (max-width: var.$base-size-mobile * 1px) {
         @content;
     }
 }
