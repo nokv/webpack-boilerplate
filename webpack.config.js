@@ -64,7 +64,7 @@ const webpackConfig = {
     module: {
         rules: [
             {
-                test: /\.(js|ts|tsx)$/,
+                test: /\.(js|ts)$/,
                 exclude: /node_modules/,
                 use: [
                     {
@@ -84,7 +84,7 @@ const webpackConfig = {
                 ],
             },
             {
-                test: /\.(js|ts|tsx)$/,
+                test: /\.(js|ts)$/,
                 exclude: /node_modules/,
                 use: [
                     {
@@ -177,7 +177,7 @@ const webpackConfig = {
         runtimeChunk: { name: 'vendor' },
     },
     resolve: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        extensions: ['.js', '.ts'],
     },
 };
 
