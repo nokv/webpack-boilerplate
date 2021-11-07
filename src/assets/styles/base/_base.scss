@@ -71,7 +71,7 @@ ol[class] {
     color: var(--color-white);
 }
 
-.sp-only {
+.mobile-only {
     display: none;
     @include global.mq-mobile {
         display: block;
@@ -79,7 +79,7 @@ ol[class] {
 }
 
 @include global.mq-mobile {
-    .pc-only {
+    .desktop-only {
         display: none;
     }
 }

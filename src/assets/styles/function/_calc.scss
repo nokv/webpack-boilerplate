@@ -1,0 +1,17 @@
+@use './size' as size;
+
+@function u-min($value, $parent: var(--base-size)) {
+    @return unquote('min(#{$value * 1px}, #{size.get-per($value, $parent)})');
+}
+
+@function u-min-vw($value, $parent: var(--base-size)) {
+    @return unquote('min(#{$value * 1px}, #{size.get-vw($value, $parent)})');
+}
+
+@function u-max($value, $parent: var(--base-size)) {
+    @return unquote('max(#{$value * 1px}, #{size.get-per($value, $parent)})');
+}
+
+@function u-max-vw($value, $parent: var(--base-size)) {
+    @return unquote('max(#{$value * 1px}, #{size.get-vw($value, $parent)})');
+}

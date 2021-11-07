@@ -14,7 +14,7 @@
     "lint:tsc": "tsc --noEmit",
     "lint:eslint": "eslint .",
     "lint:prettier": "prettier --check .",
-    "lint:style": "stylelint \"**/*.{vue,css,scss}\" --ignore-path .gitignore",
+    "lint:style": "stylelint \"**/*.{vue,css,scss}\" --ignore-path .stylelintignore",
     "fix": "run-s fix:*",
     "fix:eslint": "yarn lint:eslint --fix",
     "fix:prettier": "prettier -w .",
