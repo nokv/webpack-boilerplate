@@ -1,5 +1,5 @@
 import '../../styles/pages/index.scss';
-import add from '../modules/add';
+import { add } from '../modules/add';
 
 class Index {
     constructor() {
