@@ -56,7 +56,6 @@ jobs:
         strategy:
             matrix:
                 os: [ubuntu-latest]
-                node: [14]
 
         steps:
             - name: Checkout 🛎
