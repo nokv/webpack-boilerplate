@@ -1,4 +1,4 @@
-@use '../global' as global;
+@use '../function/media-queries' as mq;
 
 html {
     font-size: 62.5%;
@@ -73,12 +73,12 @@ ol[class] {
 
 .mobile-only {
     display: none;
-    @include global.mq-mobile {
+    @include mq.mq-mobile {
         display: block;
     }
 }
 
-@include global.mq-mobile {
+@include mq.mq-mobile {
     .desktop-only {
         display: none;
     }
