@@ -24,7 +24,7 @@
     "node": "14"
   },
   "browserslist": [
-    "last 2 version",
+    "defaults",
     "not ie < 11",
     "not dead"
   ],
