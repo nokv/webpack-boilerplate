@@ -5,7 +5,7 @@
     "useTabs": false,
     "overrides": [
         {
-            "files": ["*.json"],
+            "files": ["*.{json,yml,yaml}"],
             "options": {
                 "tabWidth": 2
             }
