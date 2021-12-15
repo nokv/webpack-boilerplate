@@ -21,7 +21,7 @@
     "fix:style": "yarn lint:style --fix"
   },
   "engines": {
-    "node": "14"
+    "node": "16"
   },
   "browserslist": [
     "defaults",
@@ -32,7 +32,7 @@
   "devDependencies": {
     "@babel/core": "7.16.5",
     "@babel/preset-env": "7.16.5",
-    "@types/node": "14.18.0",
+    "@types/node": "16.11.14",
     "@types/stylelint": "13.13.3",
     "@types/webpack-dev-server": "4.5.0",
     "@typescript-eslint/eslint-plugin": "5.7.0",
