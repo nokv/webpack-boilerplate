@@ -13,7 +13,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const Sass = require('sass');
-const Fiber = require('fibers');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 
 const { srcPath, buildPath, staticPath } = require('./config/paths');
@@ -105,9 +104,6 @@ const webpackConfig = {
                         loader: 'sass-loader',
                         options: {
                             implementation: Sass,
-                            sassOptions: {
-                                fiber: Fiber,
-                            },
                         },
                     },
                 ],
