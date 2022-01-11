@@ -31,7 +31,7 @@
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "7.16.7",
-    "@babel/preset-env": "7.16.7",
+    "@babel/preset-env": "7.16.8",
     "@types/node": "16.11.19",
     "@types/stylelint": "13.13.3",
     "@types/webpack-dev-server": "4.7.1",
