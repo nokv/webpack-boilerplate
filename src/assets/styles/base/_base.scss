@@ -1,3 +1,5 @@
+@use '../setting/color' as color;
+@use '../setting/typography' as typography;
 @use '../function/media-queries' as mq;
 
 html {
@@ -72,14 +74,13 @@ ol[class] {
 }
 
 .mobile-only {
-    display: none;
-    @include mq.mq-mobile {
-        display: block;
+    @include mq.mq-more-than-mobile {
+        display: none;
     }
 }
 
-@include mq.mq-mobile {
-    .desktop-only {
+.desktop-only {
+    @include mq.mq-mobile {
         display: none;
     }
 }

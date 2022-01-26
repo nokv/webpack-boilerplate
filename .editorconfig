@@ -12,5 +12,6 @@ insert_final_newline = false
 [*.md]
 trim_trailing_whitespace = false
 
-[*.{json,yml,yaml}]
+[*.{json,yml,yaml,rules}]
 indent_size = 2
+
