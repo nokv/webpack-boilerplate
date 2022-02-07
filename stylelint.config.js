@@ -12,6 +12,12 @@ const config = {
         'scss/at-rule-no-unknown': true,
         'no-invalid-position-at-import-rule': null,
         'media-feature-name-no-vendor-prefix': null,
+        'value-keyword-case': [
+            'lower',
+            {
+                camelCaseSvgKeywords: true,
+            },
+        ],
     },
 };
 module.exports = config;
