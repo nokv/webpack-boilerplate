@@ -1,2 +1,5 @@
 /dist/
 **/node_modules/**
+/.eslintrc.js
+/stylelint.config.js
+/webpack.config.js
