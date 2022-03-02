@@ -74,7 +74,7 @@ const webpackConfig = {
                                     '@babel/preset-env',
                                     {
                                         useBuiltIns: 'usage',
-                                        corejs: '3.20',
+                                        corejs: '3.21',
                                     },
                                 ],
                             ],
