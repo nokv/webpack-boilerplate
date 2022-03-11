@@ -1,4 +1,4 @@
-/** @type {import('@types/stylelint').Configuration} */
+/** @type {import('stylelint').Config} */
 const config = {
     extends: [
         'stylelint-config-standard',
