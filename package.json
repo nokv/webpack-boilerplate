@@ -30,7 +30,7 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "@babel/core": "7.17.5",
+    "@babel/core": "7.17.7",
     "@babel/preset-env": "7.16.11",
     "@types/node": "16.11.26",
     "@typescript-eslint/eslint-plugin": "5.14.0",
