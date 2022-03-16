@@ -52,7 +52,7 @@
     "postcss": "8.4.8",
     "postcss-custom-properties": "12.1.4",
     "postcss-loader": "6.2.1",
-    "prettier": "2.5.1",
+    "prettier": "2.6.0",
     "ress": "4.0.0",
     "sass": "1.49.9",
     "sass-loader": "12.6.0",
